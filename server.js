@@ -1,8 +1,10 @@
 const express=require("express")
 const mongoose=require("mongoose")
+const cors=require('cors')
 const app=express()
 const {students,studento,studentById, updateo, updatem, deleteo, deleteById, deletem, studentm, create_students, create_student}=require("./controllers/studentController.js")
 app.use(express.json())
+app.use(cors())
 const port=5001
 mongoose.connect("mongodb://localhost:27017/aidsa_students")
 .then(()=>{
